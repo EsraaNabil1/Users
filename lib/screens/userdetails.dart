@@ -54,7 +54,7 @@ class _UsersDetailsState extends State<UsersDetails> {
                   userLocation: widget.user.address.geo,
                 ));
               },
-              child: Text("Map View"), 
+              child: Text("Map View"),color: Colors.cyan, 
               )
         ],
       ),
