@@ -2,6 +2,7 @@ import 'package:login/models/users.dart';
 import 'package:flutter/material.dart';
 import 'package:login/screens/card.dart';
 import 'package:login/launch.dart';
+import 'package:login/screens/mapScreen.dart';
 
 class UsersDetails extends StatefulWidget {
   User user;
@@ -46,8 +47,15 @@ class _UsersDetailsState extends State<UsersDetails> {
               onTap: (){
                 launchURL("https:// ${widget.user.website}");
               },
-              child: Text("Browser: ${widget.user.website}"),
-            )
+              child: Text("Browser: ${widget.user.website}")),
+            MaterialButton(
+              onPressed:(){
+                pushPage(context, MapSample(
+                  userLocation: widget.user.address.geo,
+                ));
+              },
+              child: Text("Map View"), 
+              )
         ],
       ),
     );
